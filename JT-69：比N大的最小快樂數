@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+int sqadd(int);
+int happy(int);
+int main(){
+
+
+int n,i=0;
+cin>>n;
+for(i=n+1;;i++){
+	if(happy(i)==1) {cout<<i;break;}}
+
+}
+int sqadd(int n){
+
+int sum=0;
+
+while(n!=0){
+sum=sum+(n%10)*(n%10);
+n=n/10;
+}
+return sum;
+}
+
+int happy(int n){
+
+int flag[1000]={0};
+if(n==1) return 1;
+else{
+while(n!=1){
+n=sqadd(n);
+if(n==1) return 1;
+if(flag[n]==1) return 0;
+flag[n]=1;
+}
+}
+}
