@@ -1,0 +1,29 @@
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+using namespace std;
+int number[500001][3]={0},flag[500001]={0}; 
+int main()
+{
+ int a,b,c; 
+ for(a=0;a<=250;a++){
+  for(b=a;b<=250;b++){
+   for(c=b;c<=250;c++){
+   if(flag[a*a+b*b+c*c]==0){ 	
+		number[a*a+b*b+c*c][0]=a;
+		number[a*a+b*b+c*c][1]=b;
+		number[a*a+b*b+c*c][2]=c; 
+			flag[a*a+b*b+c*c]=1;	}}}}
+	
+int n,m,time=0;
+
+while(cin>>n){
+	while(n--){ 
+	cin>>m; 
+	if(flag[m]==1) 
+	cout<<number[m][0]<<" "<<number[m][1]<<" "<<number[m][2]<<endl;
+	else cout<<"-1"<<endl;
+	} 
+  } 
+ return 0;
+}
