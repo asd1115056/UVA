@@ -3,14 +3,19 @@
 using namespace std;
 
 int main(){
-	int a,b,count=0;
+
+int a,b,count=0;
+
+while(cin>>a>>b){
+	count=0;
+	for(int i=1;i<=sqrt(b);i++){
+		if(pow(i,2)>=a&&pow(i,2)<=b) count++;
 	
-	while(cin>>a>>b){
-		for(int i=1;i<sqrt(b);i++){
-			if(pow(i,2)>=a&&pow(i,2)<=b) count++;}}
+		}
 
 	if(a&&b) cout<<count<<endl;
 
 
 
+}
 }
