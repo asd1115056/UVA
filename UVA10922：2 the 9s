@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+    int sum, i, j, len, s, n;
+
+	string x;
+
+    while(cin>>x){ /* 讀取一字串(怕數字超出int上限，故以字串讀取) */
+    	len = x.length();
+
+        if(x=="0" && len==1) break; /* 若字串 = "0"，即跳出結束程式 */
+
+        sum = 0;
+
+        for(i=0; i<len; i++) /* 將所有字元個別轉成數字後加總 */
+
+            sum += (x.at(i) - '0');
+
+        if(sum%9!=0) cout<<x<<" is not a multiple of 9."<<endl; /* 非九的倍數 */
+
+        else { /* 計算階層 */
+
+            n=1; /* 預設 1 階(個位數) */
+
+            s=0;
+
+            while(sum>9){ /* 個位數以上為兩階。Example: 18( 1 階) = 1+8 = 9( 2 階) */
+
+                 s=0;
+
+                 while(sum>0){ /* 將所有位數加總 */
+
+                     s+=sum%10;
+
+                     sum/=10;
+
+                 }
+
+                 sum=s;
+
+                 n++; /* 階層+1 */
+
+            } /* 若sum為個位數，則結束計算；否則繼續計算階層。 */
+
+        cout<<x<<" is a multiple of 9 and has 9-degree "<<n<<"."<<endl;
+
+        }
+
+    }
+
+    return 0;
+
+}
+
