@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+int h(int,char,char,char,int);
+int count=0;
+int main(){
+int n,k;
+cin>>n>>k;
+
+h(n,'A','C','B',k);
+}
+int h(int n,char f,char t,char b,int k){
+if(n==1){
+	count++;
+	if(count==k){
+	cout<<f<<" => "<<t;}}
+else{
+h(n-1,f,b,t,k);
+count++;
+if(count==k) cout<<f<<" => "<<t;
+h(n-1,b,t,f,k);
+
+}
+}
