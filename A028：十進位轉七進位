@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+int tentoseven(int);
+int main(){
+
+int n;
+cin>>n;
+cout<<tentoseven(n);
+
+}
+int tentoseven(int n){
+
+int sum=0,s[1000],k=0;
+
+while(n!=0){
+s[k]=n%7;
+n=n/7;
+k++;}
+
+for(int i=k-1;i>=0;i--){
+	sum=sum*10;
+	sum=s[i]+sum;}
+
+return sum;
+}
