@@ -1,6 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
-#include <math.h>
+
 using namespace std;
 int number[500001][3]={0},flag[500001]={0}; 
 int main()
@@ -15,7 +14,7 @@ int main()
 		number[a*a+b*b+c*c][2]=c; 
 			flag[a*a+b*b+c*c]=1;	}}}}
 	
-int n,m,time=0;
+int n,m;
 
 while(cin>>n){
 	while(n--){ 
