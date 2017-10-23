@@ -1,0 +1,41 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+
+int n[10],o[10],a[10],d[10],m[10];
+
+for(int i=0;i<10;i++){
+	cin>>n[i];}
+
+//Original
+cout<<"Original: ";
+for(int i=0;i<10;i++){
+	cout<<" "<<n[i];}
+cout<<endl;
+
+//ASCorder
+cout<<"ASC order: ";
+for(int i=0;i<10;i++){
+	for(int j=i;j<10;j++){
+		if(n[i]>n[j]) swap(n[i],n[j]);}}
+for(int i=0;i<10;i++){
+	cout<<" "<<n[i];}
+cout<<endl;
+
+//DESCorder
+cout<<"DESC order: ";
+for(int i=9;i>=0;i--){
+	cout<<" "<<n[i];}
+cout<<endl;
+
+//Myspecialorder
+cout<<"My special order: ";
+for(int i=0;i<10;i++){
+	if(n[i]%2==0) cout<<" "<<n[i];}
+for(int i=9;i>=0;i--){
+	if(n[i]%2!=0) cout<<" "<<n[i];}
+cout<<endl;
+}
