@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+int temp1,temp2,k,x=1,len=0,n,n1;
+
+cin>>n>>k;
+n1=n;
+
+for(int z=0;z<k;z++){
+
+while(n1!=0){
+	n1/=10;
+	len++;
+}
+for(int i=0;i<len-1;i++){
+	x=x*10;}
+
+temp1=n/x;
+temp2=n%x;
+n=temp2*10+temp1;
+len=0;
+}
+cout<<n;
+}
